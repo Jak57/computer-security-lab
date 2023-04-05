@@ -17,8 +17,6 @@ struct triplet {
 
 triplet extendedEuclid(ll a, ll b) {
 
-    // cout<< a << " " << b << "\n";
-
     if (b == 0) {
         triplet ans;
         ans.gcd = a;
@@ -52,7 +50,6 @@ int main()
     for (i = 3; i*i <= n; i += 2)
     {
         if (n % i == 0) {
-                cout<< i << " " << n/i << "\n";
                 p = i;
                 break;
         }
@@ -60,11 +57,8 @@ int main()
 
     q = n / p;
     phi_n = (p-1) * (q-1);
-    cout<< p << " " << q << " " << phi_n << "\n";
-    cout<< " gcd(phi_n, e): " << gcd(phi_n, e)  << "\n";
 
     triplet ans = extendedEuclid(phi_n, e);
-    cout<< ans.x << " " << ans.y << "\n";
         d = ans.y;
         prod = ((d % phi_n) * (e % phi_n)) % phi_n;
         cout<< prod << "\n";
