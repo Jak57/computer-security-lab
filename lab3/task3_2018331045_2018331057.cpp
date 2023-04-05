@@ -32,22 +32,20 @@ int main()
 
         cout<< n << "\n";
         cout<< "Encryption: " << "\n";
+	
          for (i = 0; i < n; i++)
          {
                 ll p = message[i] - 'a' + 1;
                 C = big_mod(p, e, N);
                 v.push_back(C);
-                cout<< message[i] << " " << C << "\n";
          }
 
         cout<< "Decryption: " << "\n";
         for (i = 0; i < n; i++) {
                 C = v[i];
                 D = big_mod(C, d, N);
-                //cout<< D + 'a';
                 char ch = int(D-1) + 'a';
                 cout<< ch;
-                //cout<< D << "\n";
         }
         cout<< "\n";
 
